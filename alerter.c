@@ -28,7 +28,7 @@ void alertInCelcius(float farenheit) {
 
 int main() {
     alertInCelcius(400.5);
-    var =1;
+    int var =1;
     assert(var == alertFailureCount);
     alertInCelcius(303.6);
     printf("%d alerts failed.\n", alertFailureCount);
