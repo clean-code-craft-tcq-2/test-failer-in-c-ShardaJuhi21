@@ -27,10 +27,13 @@ void alertInCelcius(float farenheit) {
 }
 
 int main() {
+    int checkValue = 0;
     alertInCelcius(400.5);
-    int var =1;
-    assert(var == alertFailureCount);
+    checkValue ++;
+    assert(checkValue == alertFailureCount);
     alertInCelcius(303.6);
+    checkValue ++;
+    assert(checkValue == alertFailureCount);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
