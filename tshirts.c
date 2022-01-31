@@ -29,8 +29,8 @@ void printToConsoleUnavailableSize(){
 
 //stubs
 struct {
-    int availableSizeCount = 0,
-    int unavailableSizeCount = 0,
+    int availableSizeCount = 0;
+    int unavailableSizeCount = 0;
 }Count;
 
 
@@ -43,10 +43,9 @@ void stubprintToConsoleForUnvailableSize(){
 }
 
 int main() {
-    Count count;
     size(38, stubprintToConsole);
-    assert(count.availableSizeCount ==1);
+    assert(Count.availableSizeCount ==1);
     size(48, stubprintToConsole);
-    assert(count.unavailableSizeCount ==1);
+    assert(Count.unavailableSizeCount ==1);
     return 0;
 }
