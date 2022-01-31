@@ -21,10 +21,10 @@ char size(int cms, void (*fpPrintToConsole)()) {
 }
 
 void printToConsoleAvailableSize(){
- printf(" Tshirt size available");
+ printf(" Tshirt size available \n");
 }
 void printToConsoleUnavailableSize(){
- printf(" Tshirt size not available");
+ printf(" Tshirt size not available\n");
 }
 
 void testAvailableTshirtSize( int tshirtSize){
