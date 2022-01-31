@@ -35,13 +35,11 @@ struct {
 
 
 void stubprintToConsoleForAvailableSize(){
-   Count count;
-   count.availableSizeCount++;
+   Count.availableSizeCount++;
 }
 
 void stubprintToConsoleForUnvailableSize(){
-   Count count;
-   count.UnavailableSizeCount++;
+   Count.unavailableSizeCount++;
 }
 
 int main() {
