@@ -27,17 +27,28 @@ void printToConsoleUnavailableSize(){
  printf(" Tshirt size not available\n");
 }
 
-void testAvailableTshirtSize( int tshirtSize){
-   size(tshirtSize, printToConsoleAvailableSize );
+//stubs
+Struct {
+    int availableSizeCount = 0,
+    int unavailableSizeCount = 0,
+}Count;
+
+
+void stubprintToConsoleForAvailableSize(){
+   Count count;
+   count.availableSizeCount++;
 }
 
-
-void testUnavailableTshirtSize( int tshirtSize){
-   size(tshirtSize, printToConsoleUnavailableSize );
+void stubprintToConsoleForUnvailableSize(){
+   Count count;
+   count.UnavailableSizeCount++;
 }
 
 int main() {
-    testAvailableTshirtSize( 38);
-    testUnavailableTshirtSize( 48);
+    Count count;
+    size(38, stubprintToConsole);
+    assert(count.availableSizeCount ==1);
+    size(48, stubprintToConsole);
+    assert(count.unavailableSizeCount ==1);
     return 0;
 }
