@@ -45,7 +45,7 @@ void stubprintToConsoleForUnvailableSize(){
 int main() {
     size(38, stubprintToConsoleForAvailableSize);
     assert(Count.availableSizeCount ==1);
-    size(48, stubprintToConsoleForUnavailableSize);
+    size(48, stubprintToConsoleForUnvailableSize);
     assert(Count.unavailableSizeCount ==1);
     return 0;
 }
