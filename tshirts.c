@@ -28,7 +28,7 @@ void printToConsoleUnavailableSize(){
 }
 
 //stubs
-Struct {
+struct {
     int availableSizeCount = 0,
     int unavailableSizeCount = 0,
 }Count;
