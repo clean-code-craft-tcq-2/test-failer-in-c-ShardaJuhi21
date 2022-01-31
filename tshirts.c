@@ -14,7 +14,7 @@ char size(int cms, void (*fpPrintToConsole)()) {
         sizeName = 'L';
        fpPrintToConsole();
     }else{
-        sizeName = "Z"; //size not available
+        sizeName = 'Z'; //size not available
         fpPrintToConsole();
     }
     return sizeName;
@@ -32,16 +32,12 @@ void testAvailableTshirtSize( int tshirtSize){
 }
 
 
-void testAvailableTshirtSize( int tshirtSize){
+void testUnavailableTshirtSize( int tshirtSize){
    size(tshirtSize, printToConsoleUnavailableSize );
 }
 
 int main() {
-    assert(size(37) == 'S');
-    assert(size(40) == 'M');
-    assert(size(43) == 'L');
-    assert(size(48) == 'Z');
     testAvailableTshirtSize( 38);
-    testAvailableTshirtSize( 48);
+    testUnavailableTshirtSize( 48);
     return 0;
 }
