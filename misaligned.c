@@ -13,11 +13,11 @@ struct {
 } ColorPair;
 
 
+ColorPair colorpair;
 
-
-ColorPair->numberOfMajorColors =
+colorpair.numberOfMajorColors =
     sizeof(majorColor) / sizeof(majorColor[0]);
-ColorPair->numberOfMinorColors =
+colorpair.numberOfMinorColors =
     sizeof(minorColor) / sizeof(minorColor[0]);
 
 int printColorMap(void (*fpPrintToConsole)(const ColorPair* colorPair)) {
