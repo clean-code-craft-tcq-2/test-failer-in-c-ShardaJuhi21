@@ -21,7 +21,8 @@ void stubprintToConsole(){
 
  
 void alertCheck(float (*fpPrintalertInCelcius)(float), float farenheit,void (*fpPrintToConsole)(),int (*fpnetworkAlertStub)(float)){
-    float localCelsius = fpPrintalertInCelcius(farenheit);
+    float localfarenheit =farenheit;
+    float localCelsius = fpPrintalertInCelcius(localfarenheit);
     int returnCode = fpnetworkAlertStub(localCelsius);
     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
@@ -47,7 +48,6 @@ void printToConsole(float celcius){
 
 
 int main() {
-    //alertCheck(networkAlertStub,stubprintToConsole);
     alertInCelcius(alertInCelcius,303.6,stubprintToConsole, networkAlertStub);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
