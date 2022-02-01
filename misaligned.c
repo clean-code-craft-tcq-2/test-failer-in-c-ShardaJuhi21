@@ -4,7 +4,7 @@
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
-typedef struct {
+struct {
     int PairNumber = 0 ;
     char MajorColorNames[15];
     char MinorColorNames[15];
@@ -13,11 +13,11 @@ typedef struct {
 } ColorPair;
 
 
-ColorPair colorpair;
+//ColorPair colorpair;
 
-Colorpair.numberOfMajorColors =
+ColorPair.numberOfMajorColors =
     sizeof(majorColor) / sizeof(majorColor[0]);
-Colorpair.numberOfMinorColors =
+ColorPair.numberOfMinorColors =
     sizeof(minorColor) / sizeof(minorColor[0]);
 
 int printColorMap(void (*fpPrintToConsole)(const ColorPair* colorPair)) {
