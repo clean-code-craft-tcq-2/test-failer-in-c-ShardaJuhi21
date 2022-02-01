@@ -4,72 +4,36 @@
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
-typedef struct {
-    int numberOfMajorColors;
-    int numberOfMinorColors;
-}NumberofColors;
-
-typedef struct{
-    char MajorColorNames[15];
-    char MinorColorNames[15];
-
-}ColorNames;
-
-typedef struct{
-    int PairNumber = 0 ;
-    const NumberofColors *numberOfColors;
-    const ColorNames *colorNames;
-
-}ColorPair;
-
-
-static const NumberofColors colors =
-{
-    .numberOfMajorColors = sizeof(majorColor) / sizeof(majorColor[0]),
-    .numberOfMinorColors = sizeof(minorColor) / sizeof(minorColor[0]),
-};
-
-// static const NumberofColors colors =
-// {
-//     .numberOfMajorColors = sizeof(majorColor) / sizeof(majorColor[0]),
-//     .numberOfMinorColors = sizeof(minorColor) / sizeof(minorColor[0]),
-// };
-
-int printColorMap(void (*fpPrintToConsole)(const ColorPair * const colorpair )) {
-    ColorPair  const *colorpairList = colorpair;
+int printColorMap(void (*fpPrintToConsole)(int, int)) {
     int i = 0, j = 0;
-    for(i = 0; i < colorpairList ->NumberofColors.numberOfMajorColors; i++) {
-        for(j = 0; j < colorpairList ->NumberofColors.numberOfMinorColors; j++) {
-           fpPrintToConsole(colorpairList);
+    for(i = 0; i < 5; i++) {
+        for(j = 0; j < 5; j++) {
+         fpPrintToConsole(i,j);
         }
     }
     return i * j;
 }
 
-void printToConsole(const ColorPair * const colorpair){
-    ColorPair  const *colorpairList = colorpair;
-     printf("%d | %s | %s\n", colorpairList ->NumberofColors.numberOfMajorColors * 5  + colorpairList ->NumberofColors.numberOfMinorColors, majorColor[colorpairList ->NumberofColors.numberOfMajorColors], minorColor[colorpairList ->NumberofColors.->numberOfMinorColors]);
+void printToConsole(int MajorIndex, int MinorIndex){
+     printf("%d | %s | %s\n", MajorIndex * 5  + MinorIndex, majorColor[MajorIndex], minorColor[MinorIndex]);
     
 }
 
 // stub
 
-
-
-
-void stubPrintToConsole(const ColorPair * const colorpair){
- ColorPair  const *colorpairList = colorpair;
-    colorpairList.PairNumber++;
-//  MajorColorNames[colorPair->majorColor];
-//  MinorColorNames[colorPair->minorColor];
+PairNumber =0;
+ void stubPrintToConsole(int MajorIndex, int MinorIndex){
+    PairNumber++;
     
 }
 
 
 
 int main() {
-    int result = printColorMap(stubPrintToConsole(const ColorPair * const colorpair);
-//     assert(ColorPair->PairNumber == result);
+    int MajorIndex =5;
+    int MinorIndex =5;
+    int result = printColorMap(stubPrintToConsole(MajorIndex, MinorIndex);
+    assert(result ==PairNumber);
     printf("All is well (maybe!)\n");
     return 0;
 }
