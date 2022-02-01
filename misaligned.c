@@ -12,7 +12,7 @@ typedef struct{
     int numberOfMinorColors;
 }  ColorPair;
 
-const ColorPair colorpair;
+const ColorPair *colorpair;
 
 colorpair.numberOfMajorColors =
     sizeof(majorColor) / sizeof(majorColor[0]);
