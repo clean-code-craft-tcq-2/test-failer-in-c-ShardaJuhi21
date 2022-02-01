@@ -13,11 +13,14 @@ typedef struct{
 }  ColorPair;
 
 const ColorPair *colorpair;
-
-colorpair.numberOfMajorColors =
+colorpair{
+   .numberOfMajorColors =
     sizeof(majorColor) / sizeof(majorColor[0]);
-colorpair.numberOfMinorColors =
+    .numberOfMinorColors =
     sizeof(minorColor) / sizeof(minorColor[0]);
+    
+};
+
 
 int printColorMap(void (*fpPrintToConsole)(const ColorPair* colorPair)) {
     int i = 0, j = 0;
