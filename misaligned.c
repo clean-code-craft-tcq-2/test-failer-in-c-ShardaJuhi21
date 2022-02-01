@@ -22,7 +22,11 @@ void printToConsole(int MajorIndex, int MinorIndex){
 // stub
 
 static int PairNumber = 0;
- void stubPrintToConsole(int MajorIndex, int MinorIndex){
+static int MajorIndex = 0;
+static int MinorIndex = 0;
+ void stubPrintToConsole(MajorIndex, MinorIndex){
+    MajorIndex++;
+    MinorIndex++;
     PairNumber++;
     
 }
@@ -30,9 +34,9 @@ static int PairNumber = 0;
 
 
 int main() {
-    int MajorIndex =5;
-    int MinorIndex =5;
-    int result = printColorMap(stubPrintToConsole(MajorIndex, MinorIndex));
+    int localMajorIndex =5;
+    int localMinorIndex =5;
+    int result = printColorMap(stubPrintToConsole(localMajorIndex, localMinorIndex));
     assert(result ==PairNumber);
     printf("All is well (maybe!)\n");
     return 0;
