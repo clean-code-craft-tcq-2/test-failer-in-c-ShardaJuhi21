@@ -12,14 +12,17 @@ int networkAlertStub(float celcius) {
         return celcius;
     }
     return 200;
+
+}
+
+void stubprintToConsole(){
  FailureCount++;
 }
 
-   
-
-void alertInCelcius(float farenheit, void (*fpPrintToConsole)(int)) {
-    float celcius = (farenheit - 32) * 5 / 9;
-    int returnCode = networkAlertStub(celcius);
+ 
+void alertCheck(float (*fpPrintalertInCelcius)(float), float farenheit,void (*fpPrintToConsole)(),int (*fpnetworkAlertStub)(float)){
+    float localCelsius = fpPrintalertInCelcius(farenheit);
+    int returnCode = fpnetworkAlertStub(localCelsius);
     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
         // let us keep a count of failures to report
@@ -27,20 +30,25 @@ void alertInCelcius(float farenheit, void (*fpPrintToConsole)(int)) {
         // Add a test below to catch this bug. Alter the stub above, if needed.
         alertFailureCount ++;
         fpPrintToConsole();
-        
-    }
+    }   
+ }
+
+float alertInCelcius(float farenheit) {
+    float celcius = (farenheit - 32) * 5 / 9;
+   return celcius;
+
 }
 
 void printToConsole(int celcius){
  printf("ALERT: Temperature is %.1f celcius.\n", celcius);
 }
-//stubs
+
 
 
 
 int main() {
-    alertInCelcius(400.5,networkAlertStub);
-    alertInCelcius(303.6,networkAlertStub);
+    alertCheck(networkAlertStub,stubprintToConsole);
+    //alertInCelcius(alertInCelcius,303.6,stubprintToConsole, networkAlertStub);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
