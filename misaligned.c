@@ -21,17 +21,19 @@ void printToConsole(const ColorPair* colorPair ){
 }
 
 // stub
-int numberOfMajorColors =
-    sizeof(majorColor) / sizeof(majorColor[0]);
-int numberOfMinorColors =
-    sizeof(minorColor) / sizeof(minorColor[0]);
+
 typedef struct {
     int PairNumber = 0 
     char MajorColorNames[15];
     char MinorColorNames[15];
-    numberOfMajorColors;
-    numberOfMinorColors;
+    int numberOfMajorColors;
+    int numberOfMinorColors;
 } ColorPair;
+
+ColorPair.numberOfMajorColors =
+    sizeof(majorColor) / sizeof(majorColor[0]);
+ColorPair.numberOfMinorColors =
+    sizeof(minorColor) / sizeof(minorColor[0]);
 
 
 void stubPrintToConsole(const ColorPair* colorPair ){
