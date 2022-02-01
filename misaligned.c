@@ -4,7 +4,7 @@
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
-struct {
+typedef struct {
     int PairNumber = 0 ;
     char MajorColorNames[15];
     char MinorColorNames[15];
