@@ -22,11 +22,12 @@ void printToConsole(int MajorIndex, int MinorIndex){
 // stub
 
 static int PairNumber = 0;
-static int MajorIndex = 0;
-static int MinorIndex = 0;
- void stubPrintToConsole(MajorIndex, MinorIndex){
-    MajorIndex++;
-    MinorIndex++;
+
+ void stubPrintToConsole(int MajorIndex, int MinorIndex){
+     int localMajorIndex = MajorIndex;
+     int localMinorIndex = MinorIndex;
+    localMajorIndex++;
+    localMinorIndex++;
     PairNumber++;
     
 }
