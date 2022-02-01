@@ -4,13 +4,13 @@
 const char* majorColor[] = {"White", "Red", "Black", "Yellow", "Violet"};
 const char* minorColor[] = {"Blue", "Orange", "Green", "Brown", "Slate"};
 
-typedef struct {
+typedef struct ColorPair{
     int PairNumber = 0 ;
     char MajorColorNames[15];
     char MinorColorNames[15];
     int numberOfMajorColors;
     int numberOfMinorColors;
-} ColorPair colorpair;
+}colorpair;
 
 colorpair.numberOfMajorColors =
     sizeof(majorColor) / sizeof(majorColor[0]);
