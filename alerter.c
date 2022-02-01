@@ -39,7 +39,7 @@ float alertInCelcius(float farenheit) {
 
 }
 
-void printToConsole(int celcius){
+void printToConsole(float celcius){
  printf("ALERT: Temperature is %.1f celcius.\n", celcius);
 }
 
