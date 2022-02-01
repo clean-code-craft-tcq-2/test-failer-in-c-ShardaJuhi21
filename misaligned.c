@@ -21,7 +21,7 @@ void printToConsole(int MajorIndex, int MinorIndex){
 
 // stub
 
-PairNumber =0;
+int PairNumber =0;
  void stubPrintToConsole(int MajorIndex, int MinorIndex){
     PairNumber++;
     
@@ -32,7 +32,7 @@ PairNumber =0;
 int main() {
     int MajorIndex =5;
     int MinorIndex =5;
-    int result = printColorMap(stubPrintToConsole(MajorIndex, MinorIndex);
+    int result = printColorMap(stubPrintToConsole(MajorIndex, MinorIndex));
     assert(result ==PairNumber);
     printf("All is well (maybe!)\n");
     return 0;
