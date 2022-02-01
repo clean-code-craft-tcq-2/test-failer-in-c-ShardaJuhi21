@@ -21,7 +21,7 @@ void printToConsole(int MajorIndex, int MinorIndex){
 
 // stub
 
-int PairNumber =0;
+static int PairNumber = 0;
  void stubPrintToConsole(int MajorIndex, int MinorIndex){
     PairNumber++;
     
