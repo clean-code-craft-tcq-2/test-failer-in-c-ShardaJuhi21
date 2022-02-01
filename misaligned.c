@@ -10,10 +10,7 @@ typedef struct {
     char MinorColorNames[15];
     int numberOfMajorColors;
     int numberOfMinorColors;
-} ColorPair;
-
-
-ColorPair colorpair;
+} ColorPair colorpair;
 
 colorpair.numberOfMajorColors =
     sizeof(majorColor) / sizeof(majorColor[0]);
