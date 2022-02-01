@@ -20,7 +20,7 @@ void stubprintToConsole(){
 }
 
  
-void alertCheck( float (*fpPrintalertInCelcius)(float), float farenheit,void (*fpPrintToConsole)(),int (*fpnetworkAlertStub)(float)){
+void alertCheck( (float) (*fpalertInCelcius)(float), float farenheit,(void) (*fpPrintToConsole)(),(int) (*fpnetworkAlertStub)(float)){
     float localfarenheit =farenheit;
     float localCelsius = fpPrintalertInCelcius(localfarenheit);
     int returnCode = fpnetworkAlertStub(localCelsius);
