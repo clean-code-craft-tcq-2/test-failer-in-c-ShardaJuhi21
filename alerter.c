@@ -2,7 +2,7 @@
 #include <assert.h>
 
 int alertFailureCount = 0;
-
+ int FailureCount = 0;
 int networkAlertStub(float celcius) {
  
     // Return 200 for ok
@@ -12,6 +12,7 @@ int networkAlertStub(float celcius) {
         return celcius;
     }
     return 200;
+ FailureCount++;
 }
 
    
@@ -24,7 +25,7 @@ void alertInCelcius(float farenheit, void (*fpPrintToConsole)(int)) {
         // let us keep a count of failures to report
         // However, this code doesn't count failures!
         // Add a test below to catch this bug. Alter the stub above, if needed.
-        alertFailureCount += 0;
+        alertFailureCount ++;
         fpPrintToConsole();
         
     }
@@ -33,10 +34,13 @@ void alertInCelcius(float farenheit, void (*fpPrintToConsole)(int)) {
 void printToConsole(int celcius){
  printf("ALERT: Temperature is %.1f celcius.\n", celcius);
 }
+//stubs
+
+
 
 int main() {
-    alertInCelcius(400.5);
-    alertInCelcius(303.6);
+    alertInCelcius(400.5,networkAlertStub);
+    alertInCelcius(303.6,networkAlertStub);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
