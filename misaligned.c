@@ -15,15 +15,15 @@ typedef struct {
 
 ColorPair colorpair;
 
-colorpair.numberOfMajorColors =
+Colorpair.numberOfMajorColors =
     sizeof(majorColor) / sizeof(majorColor[0]);
-colorpair.numberOfMinorColors =
+Colorpair.numberOfMinorColors =
     sizeof(minorColor) / sizeof(minorColor[0]);
 
 int printColorMap(void (*fpPrintToConsole)(const ColorPair* colorPair)) {
     int i = 0, j = 0;
-    for(i = 0; i < ColorPair->numberOfMajorColors; i++) {
-        for(j = 0; j < ColorPair->numberOfMinorColors; j++) {
+    for(i = 0; i < (ColorPair.numberOfMajorColors); i++) {
+        for(j = 0; j < (ColorPair.numberOfMinorColors); j++) {
            fpPrintToConsole(ColorPair);
         }
     }
@@ -32,7 +32,7 @@ int printColorMap(void (*fpPrintToConsole)(const ColorPair* colorPair)) {
 
 void printToConsole(const ColorPair* colorPair ){
     
-     printf("%d | %s | %s\n", ColorPair->numberOfMajorColors * 5 + ColorPair->numberOfMinorColors, majorColor[ColorPair->numberOfMajorColors], minorColor[ColorPair->numberOfMinorColors]);
+     printf("%d | %s | %s\n", ((ColorPair.numberOfMajorColors) * 5 ) + ColorPair.numberOfMinorColors, majorColor[ColorPair->numberOfMajorColors], minorColor[ColorPair->numberOfMinorColors]);
     
 }
 
