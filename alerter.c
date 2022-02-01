@@ -48,7 +48,7 @@ void printToConsole(float celcius){
 
 
 int main() {
-    alertInCelcius(alertInCelcius,303.6,stubprintToConsole, networkAlertStub);
+    alertCheck(alertInCelcius,303.6,stubprintToConsole, networkAlertStub);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
