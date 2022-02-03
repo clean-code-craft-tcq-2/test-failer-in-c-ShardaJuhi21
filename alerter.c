@@ -4,7 +4,7 @@
 #define FARENHEITTEMP 303.6
 #define FARENHEITTEMP2 400.5
 int alertFailureCount = 0;
-//int FailureCount = 0;
+int FailureCount = 0;
 int networkAlertStub(float celcius) {
  
     // Return 200 for ok
@@ -17,18 +17,20 @@ int networkAlertStub(float celcius) {
 
 }
 
-// void stubPrintToConsole(float celcius){
-//   float localCelsius = celcius;
-//  FailureCount++;
-// }
+void stubPrintToConsole(float celcius){
+  float localCelsius = celcius;
+ FailureCount++;
+}
 
-// float CelsiusCounter =0;
-// float NetworkCounter =0;
-// float stubAlertInCelcius(float farenheit) {
-//   float localfarenheit =farenheit;
-//   CelsiusCounter++;
-//  return 0;
-// }
+float stubAlertInCelcius(float farenheit) {
+  float localfarenheit =farenheit;
+ return 0;
+}
+
+int StubnetworkAlert(float celcius) {
+ float localCelsius = celcius;
+    return 0;
+}
 
  
 void alertCheck( float (*fpalertInCelcius)(float), float farenheit,void (*fpPrintToConsole)(float),int (*fpnetworkAlertStub)(float)){
@@ -58,7 +60,7 @@ int main() {
     alertCheck(alertInCelcius,FARENHEITTEMP,printToConsole, networkAlertStub);
     alertCheck(alertInCelcius,FARENHEITTEMP2,printToConsole, networkAlertStub);
  //test
-    //alertCheck(stubAlertInCelcius,303.6,stubPrintToConsole, StubnetworkAlert);
+    alertCheck(stubAlertInCelcius,,FARENHEITTEMP,stubPrintToConsole, StubnetworkAlert);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
