@@ -34,7 +34,7 @@ int networkAlertStub(float celcius) {
 // }
 
  
-void alertCheck( float (*fpalertInCelcius)(float), float farenheit,void (*fpPrintToConsole)(),int (*fpnetworkAlertStub)(float)){
+void alertCheck( float (*fpalertInCelcius)(float), float farenheit,void (*fpPrintToConsole)(float),int (*fpnetworkAlertStub)(float)){
     float localfarenheit =farenheit;
     float localCelsius = fpalertInCelcius(localfarenheit);
     int returnCode = fpnetworkAlertStub(localCelsius);
