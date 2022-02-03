@@ -2,7 +2,7 @@
 #include <assert.h>
 
 
-char size(int cms, void (*fpPrintToConsole)(int)) {
+char size(int cms, void (*fpPrintToConsole)(char)) {
     char sizeName = '\0';
     if(cms < 38) {
         sizeName = 'S';
