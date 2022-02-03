@@ -50,7 +50,9 @@ int main() {
     size(48, printToConsoleAvailableSize);
     size(39, stubprintToConsoleForAvailableSize);
     assert(Count.availableSizeCount ==1);
+    assert(SizeName =='M');
     size(48, stubprintToConsoleForUnvailableSize);
     assert(Count.unavailableSizeCount ==1);
+    assert(SizeName =='Z');
     return 0;
 }
