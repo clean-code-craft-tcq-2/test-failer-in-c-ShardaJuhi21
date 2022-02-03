@@ -44,7 +44,7 @@ void alertCheck( float (*fpalertInCelcius)(float), float farenheit,void (*fpPrin
         // However, this code doesn't count failures!
         // Add a test below to catch this bug. Alter the stub above, if needed.
         alertFailureCount ++;
-        fpPrintToConsole();
+        fpPrintToConsole( float returnCode);
     }   
  }
 
