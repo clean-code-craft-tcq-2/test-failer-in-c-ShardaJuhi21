@@ -24,8 +24,10 @@ void printToConsoleAvailableSize(char sizeName){
  if(sizeName == 'Z'){
      printf(" Tshirt size not available %c\n", sizeName);
  }
-   printf(" Tshirt size  available %c\n", sizeName);
-}
+ else{ 
+     printf(" Tshirt size  available %c\n", sizeName);
+     }
+}    
 
 //stubs
 struct {
@@ -47,7 +49,7 @@ void stubprintToConsoleForUnvailableSize(char sizeName){
 
 int main() {
     size(39, printToConsoleAvailableSize);
-    //size(48, printToConsoleAvailableSize);
+    size(48, printToConsoleAvailableSize);
     size(39, stubprintToConsoleForAvailableSize);
     assert(Count.availableSizeCount ==1);
     assert(SizeName =='M');
