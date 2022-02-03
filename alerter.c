@@ -25,7 +25,6 @@ Counter++;
 float stubAlertInCelcius(float celcius) {
       if(celcius < 200 || celcius > 200){
         return 500;
-     FailureCount++;
     }
     return 200;
 }
