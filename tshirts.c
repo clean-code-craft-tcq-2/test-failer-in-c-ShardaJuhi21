@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-
+char SizeName = '\0';
 char size(int cms, void (*fpPrintToConsole)(char)) {
     char sizeName = '\0';
     if(cms < 38) {
@@ -33,7 +33,7 @@ struct {
     int unavailableSizeCount = 0;
 }Count;
 
-char SizeName;
+
 void stubprintToConsoleForAvailableSize(char sizeName){
    SizeName = sizeName;
    Count.availableSizeCount++;
