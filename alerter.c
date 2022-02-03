@@ -52,7 +52,7 @@ int main() {
     alertCheck(alertInCelcius,FARENHEITTEMP,stubPrintToConsole, networkAlertStub);
     assert(FailureCounter == alertFailureCount);
     alertCheck(alertInCelcius,FARENHEITTEMP2,stubPrintToConsole, networkAlertStub);
-    assert(Counter == alertFailureCount);
+    assert(FailureCounter == alertFailureCount);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
