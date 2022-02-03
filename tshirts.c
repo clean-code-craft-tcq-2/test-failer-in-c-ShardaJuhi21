@@ -2,7 +2,7 @@
 #include <assert.h>
 
 
-char size(int cms, void (*fpPrintToConsole)()) {
+char size(int cms, void (*fpPrintToConsole)(int)) {
     char sizeName = '\0';
     if(cms < 38) {
         sizeName = 'S';
@@ -20,11 +20,11 @@ char size(int cms, void (*fpPrintToConsole)()) {
     return sizeName;
 }
 
-void printToConsoleAvailableSize(){
- printf(" Tshirt size available \n");
-}
-void printToConsoleUnavailableSize(){
- printf(" Tshirt size not available\n");
+void printToConsoleAvailableSize(char sizeName){
+ if(sizeName == 'Z'){
+     printf(" Tshirt size available %c\n", sizeName);
+ }
+   printf(" Tshirt size not available %c\n", sizeName);
 }
 
 //stubs
@@ -34,11 +34,11 @@ struct {
 }Count;
 
 
-void stubprintToConsoleForAvailableSize(){
+void stubprintToConsoleForAvailableSize(char sizeName){
    Count.availableSizeCount++;
 }
 
-void stubprintToConsoleForUnvailableSize(){
+void stubprintToConsoleForUnvailableSize(char sizeName){
    Count.unavailableSizeCount++;
 }
 
