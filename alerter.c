@@ -22,8 +22,8 @@ void stubPrintToConsole(float Counter){
 Counter++;
 }
 
-float stubAlertInCelcius(float farenheit) {
-      if(farenheit < 200 || farenheit > 200){
+float stubAlertInCelcius(float celcius) {
+      if(celcius < 200 || celcius > 200){
         return 500;
      FailureCount++;
     }
@@ -59,6 +59,7 @@ int main() {
     alertCheck(alertInCelcius,FARENHEITTEMP2,printToConsole, networkAlertStub);
  //test
     alertCheck(stubAlertInCelcius,FARENHEITTEMP,stubPrintToConsole, networkAlertStub);
+    assert(FailureCount, alertFailureCount);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
