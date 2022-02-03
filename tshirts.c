@@ -22,9 +22,9 @@ char size(int cms, void (*fpPrintToConsole)(char)) {
 
 void printToConsoleAvailableSize(char sizeName){
  if(sizeName == 'Z'){
-     printf(" Tshirt size available %c\n", sizeName);
+     printf(" Tshirt size not available %c\n", sizeName);
  }
-   printf(" Tshirt size not available %c\n", sizeName);
+   printf(" Tshirt size  available %c\n", sizeName);
 }
 
 //stubs
