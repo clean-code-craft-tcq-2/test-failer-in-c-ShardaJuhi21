@@ -2,6 +2,7 @@
 #include <assert.h>
 
 #define FARENHEITTEMP 303.6
+#define FARENHEITTEMP2 400.5
 int alertFailureCount = 0;
 //int FailureCount = 0;
 int networkAlertStub(float celcius) {
@@ -29,17 +30,9 @@ int networkAlertStub(float celcius) {
 //  return 0;
 // }
 
-// int StubnetworkAlert(float celcius) {
-//  float localCelsius = celcius;
-//     NetworkCounter++;
-//     return 0;
-
-// }
-
  
 void alertCheck( float (*fpalertInCelcius)(float), float farenheit,void (*fpPrintToConsole)(float),int (*fpnetworkAlertStub)(float)){
-    float localfarenheit =farenheit;
-    float localCelsius = fpalertInCelcius(localfarenheit);
+    float localCelsius = fpalertInCelcius(farenheit);
     int returnCode = fpnetworkAlertStub(localCelsius);
     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
@@ -54,9 +47,7 @@ void alertCheck( float (*fpalertInCelcius)(float), float farenheit,void (*fpPrin
 float alertInCelcius(float farenheit) {
     float celcius = (farenheit - 32) * 5 / 9;
    return celcius;
-
 }
-
 
 void printToConsole(float celcius){
  printf("ALERT: Temperature is %.1f celcius.\n", celcius);
@@ -65,6 +56,7 @@ void printToConsole(float celcius){
 
 int main() {
     alertCheck(alertInCelcius,FARENHEITTEMP,printToConsole, networkAlertStub);
+    alertCheck(alertInCelcius,FARENHEITTEMP2,printToConsole, networkAlertStub);
  //test
     //alertCheck(stubAlertInCelcius,303.6,stubPrintToConsole, StubnetworkAlert);
     printf("%d alerts failed.\n", alertFailureCount);
