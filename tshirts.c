@@ -46,9 +46,9 @@ void stubprintToConsoleForUnvailableSize(char sizeName){
 
 
 int main() {
-    size(38, printToConsoleAvailableSize);
+    size(39, printToConsoleAvailableSize);
     size(48, printToConsoleAvailableSize);
-    size(38, stubprintToConsoleForAvailableSize);
+    size(39, stubprintToConsoleForAvailableSize);
     assert(Count.availableSizeCount ==1);
     size(48, stubprintToConsoleForUnvailableSize);
     assert(Count.unavailableSizeCount ==1);
