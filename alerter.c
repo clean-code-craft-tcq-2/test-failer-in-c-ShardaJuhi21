@@ -2,7 +2,7 @@
 #include <assert.h>
 
 int alertFailureCount = 0;
- int FailureCount = 0;
+ //int FailureCount = 0;
 int networkAlertStub(float celcius) {
  
     // Return 200 for ok
@@ -15,23 +15,23 @@ int networkAlertStub(float celcius) {
 
 }
 
-void stubPrintToConsole(){
- FailureCount++;
-}
+// void stubPrintToConsole(){
+//  FailureCount++;
+// }
 
-float CelsiusCounter =0;
-float NetworkCounter =0;
-float stubAlertInCelcius(float farenheit) {
+// float CelsiusCounter =0;
+// float NetworkCounter =0;
+// float stubAlertInCelcius(float farenheit) {
 
-  CelsiusCounter++;
- return 0;
-}
+//   CelsiusCounter++;
+//  return 0;
+// }
 
-int StubnetworkAlert(float celcius) {
-    NetworkCounter++;
-    return 0;
+// int StubnetworkAlert(float celcius) {
+//     NetworkCounter++;
+//     return 0;
 
-}
+// }
 
  
 void alertCheck( float (*fpalertInCelcius)(float), float farenheit,void (*fpPrintToConsole)(),int (*fpnetworkAlertStub)(float)){
