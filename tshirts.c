@@ -1,22 +1,62 @@
 #include <stdio.h>
 #include <assert.h>
 
-char size(int cms) {
+char SizeName = '\0';
+char size(int cms, void (*fpPrintToConsole)(char)) {
     char sizeName = '\0';
     if(cms < 38) {
         sizeName = 'S';
+        fpPrintToConsole(sizeName);
     } else if(cms > 38 && cms < 42) {
         sizeName = 'M';
-    } else if(cms > 42) {
+        fpPrintToConsole(sizeName);
+    } else if(cms > 42 && cms < 47) {
         sizeName = 'L';
+       fpPrintToConsole(sizeName);
+    }else{
+        sizeName = 'Z'; //size not available
+        fpPrintToConsole(sizeName);
     }
     return sizeName;
 }
 
+void printToConsoleAvailableSize(char sizeName){
+ if(sizeName == 'Z'){
+     printf(" Tshirt size not available %c\n", sizeName);
+ }
+ else{ 
+     printf(" Tshirt size  available %c\n", sizeName);
+     }
+}    
+
+//stubs
+struct {
+    int availableSizeCount = 0;
+    int unavailableSizeCount = 0;
+}Count;
+
+
+void stubprintToConsoleForAvailableSize(char sizeName){
+   SizeName = sizeName;
+   Count.availableSizeCount++;
+}
+
+void stubprintToConsoleForUnvailableSize(char sizeName){
+    SizeName = sizeName;
+   Count.unavailableSizeCount++;
+}
+
+
 int main() {
-    assert(size(37) == 'S');
-    assert(size(40) == 'M');
-    assert(size(43) == 'L');
-    printf("All is well (maybe!)\n");
+    size(39, printToConsoleAvailableSize);
+    size(48, printToConsoleAvailableSize);
+    
+    //test
+    size(39, stubprintToConsoleForAvailableSize);
+    assert(Count.availableSizeCount ==1);
+    assert(SizeName =='M');
+    size(48, stubprintToConsoleForUnvailableSize);
+    assert(Count.unavailableSizeCount ==1);
+    assert(SizeName =='Z');
     return 0;
 }
