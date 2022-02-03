@@ -37,6 +37,8 @@ static int PairNumber = 0;
 int main() {
     int result;
     result = printColorMap(printToConsole);
+    
+    //test
     result = printColorMap(stubPrintToConsole);
     assert(result ==PairNumber);
     printf("All is well (maybe!)\n");
