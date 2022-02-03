@@ -6,16 +6,16 @@ char size(int cms, void (*fpPrintToConsole)(char)) {
     char sizeName = '\0';
     if(cms < 38) {
         sizeName = 'S';
-        fpPrintToConsole();
+        fpPrintToConsole(sizeName);
     } else if(cms > 38 && cms < 42) {
         sizeName = 'M';
-        fpPrintToConsole();
+        fpPrintToConsole(sizeName);
     } else if(cms > 42 && cms < 47) {
         sizeName = 'L';
-       fpPrintToConsole();
+       fpPrintToConsole(sizeName);
     }else{
         sizeName = 'Z'; //size not available
-        fpPrintToConsole();
+        fpPrintToConsole(sizeName);
     }
     return sizeName;
 }
