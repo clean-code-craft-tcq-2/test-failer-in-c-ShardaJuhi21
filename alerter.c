@@ -18,7 +18,7 @@ int networkAlertStub(float celcius) {
     return 200;
 }
 
-void stubPrintToConsole(float celcius){
+void stubPrintToConsole(float Counter){
 Counter++;
 }
 
