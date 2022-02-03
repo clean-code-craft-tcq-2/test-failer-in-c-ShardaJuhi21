@@ -59,7 +59,7 @@ float alertInCelcius(float farenheit) {
 float inputFromConsole()
  {
   float farehneit;
- printf("Temperature is &f celcius.\n", farehneit);
+ scanf("Temperature is &f celcius.\n", farehneit);
  return farehneit;
 }
 
