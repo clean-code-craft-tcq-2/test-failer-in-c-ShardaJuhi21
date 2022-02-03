@@ -5,6 +5,7 @@
 #define FARENHEITTEMP2 400.5
 int alertFailureCount = 0;
 int FailureCount = 0;
+int Counter =0;
 int networkAlertStub(float celcius) {
  
     // Return 200 for ok
@@ -12,24 +13,21 @@ int networkAlertStub(float celcius) {
     // stub always succeeds and returns 200
     if(celcius < 200 || celcius > 200){
         return 500;
+     FailureCount++;
     }
     return 200;
-
 }
 
 void stubPrintToConsole(float celcius){
-  float localCelsius = celcius;
- FailureCount++;
+Counter++;
 }
 
 float stubAlertInCelcius(float farenheit) {
-  float localfarenheit =farenheit;
- return 0;
-}
-
-int StubnetworkAlert(float celcius) {
- float localCelsius = celcius;
-    return 0;
+      if(farenheit < 200 || farenheit > 200){
+        return 500;
+     FailureCount++;
+    }
+    return 200;
 }
 
  
@@ -60,7 +58,7 @@ int main() {
     alertCheck(alertInCelcius,FARENHEITTEMP,printToConsole, networkAlertStub);
     alertCheck(alertInCelcius,FARENHEITTEMP2,printToConsole, networkAlertStub);
  //test
-    alertCheck(stubAlertInCelcius,FARENHEITTEMP,stubPrintToConsole, StubnetworkAlert);
+    alertCheck(stubAlertInCelcius,FARENHEITTEMP,stubPrintToConsole, networkAlertStub);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
