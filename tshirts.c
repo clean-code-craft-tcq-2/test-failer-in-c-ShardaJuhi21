@@ -33,12 +33,14 @@ struct {
     int unavailableSizeCount = 0;
 }Count;
 
-
+char SizeName;
 void stubprintToConsoleForAvailableSize(char sizeName){
+   Sizename = sizeName;
    Count.availableSizeCount++;
 }
 
 void stubprintToConsoleForUnvailableSize(char sizeName){
+    Sizename = sizeName;
    Count.unavailableSizeCount++;
 }
 
