@@ -2,7 +2,7 @@
 #include <assert.h>
 
 int alertFailureCount = 0;
-int FailureCount = 0;
+//int FailureCount = 0;
 int networkAlertStub(float celcius) {
  
     // Return 200 for ok
@@ -15,29 +15,29 @@ int networkAlertStub(float celcius) {
 
 }
 
-void stubPrintToConsole(float celcius){
-  float localCelsius = celsius;
- FailureCount++;
-}
+// void stubPrintToConsole(float celcius){
+//   float localCelsius = celcius;
+//  FailureCount++;
+// }
 
-float CelsiusCounter =0;
-float NetworkCounter =0;
-float stubAlertInCelcius(float farenheit) {
-  float localfarenheit =farenheit;
-  CelsiusCounter++;
- return 0;
-}
+// float CelsiusCounter =0;
+// float NetworkCounter =0;
+// float stubAlertInCelcius(float farenheit) {
+//   float localfarenheit =farenheit;
+//   CelsiusCounter++;
+//  return 0;
+// }
 
-int StubnetworkAlert(float celcius) {
- float localCelsius = celsius;
-    NetworkCounter++;
-    return 0;
+// int StubnetworkAlert(float celcius) {
+//  float localCelsius = celcius;
+//     NetworkCounter++;
+//     return 0;
 
-}
+// }
 
  
-void alertCheck( float (*fpalertInCelcius)(float), float farenheit,void (*fpPrintToConsole)(float),int (*fpnetworkAlertStub)(float)){
-    float localfarenheit =farenheit;
+void alertCheck( float (*fpalertInCelcius)(float), float (*fpInputFromConsole)(),void (*fpPrintToConsole)(float),int (*fpnetworkAlertStub)(float)){
+    float localfarenheit =fpInputFromConsole();
     float localCelsius = fpalertInCelcius(localfarenheit);
     int returnCode = fpnetworkAlertStub(localCelsius);
     if (returnCode != 200) {
@@ -56,13 +56,20 @@ float alertInCelcius(float farenheit) {
 
 }
 
+float inputFromConsole()
+ {
+  float farehneit;
+ printf("Temperature is &f celcius.\n", farehneit);
+ return farehneit;
+}
+
 void printToConsole(float celcius){
  printf("ALERT: Temperature is %.1f celcius.\n", celcius);
 }
 
 
 int main() {
-    alertCheck(alertInCelcius,303.6,printToConsole, networkAlertStub);
+    alertCheck(alertInCelcius,inputFromConsole,printToConsole, networkAlertStub);
  //test
     //alertCheck(stubAlertInCelcius,303.6,stubPrintToConsole, StubnetworkAlert);
     printf("%d alerts failed.\n", alertFailureCount);
