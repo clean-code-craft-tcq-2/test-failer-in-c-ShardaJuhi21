@@ -20,8 +20,8 @@ void stubPrintToConsole(float Counter){
 Counter++;
 }
 
-float stubAlertInCelcius(float celcius) {
-      if(celcius < 200 || celcius > 200){
+float stubAlertInCelcius(float farenheit) {
+      if(farenheit < 392.0 || farenheit > 392.0){
         return 500;
     }
     return 200;
