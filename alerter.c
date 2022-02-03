@@ -47,9 +47,9 @@ void printToConsole(float celcius){
 
 int main() {
  //test
-    alertCheck(stubAlertInCelcius,FARENHEITTEMP,stubPrintToConsole, networkAlertStub);
+    alertCheck(alertInCelcius,FARENHEITTEMP,stubPrintToConsole, networkAlertStub);
     assert(Counter == alertFailureCount);
-    alertCheck(salertInCelcius,FARENHEITTEMP2,stubPrintToConsole, networkAlertStub);
+    alertCheck(alertInCelcius,FARENHEITTEMP2,stubPrintToConsole, networkAlertStub);
     assert(Counter == alertFailureCount);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
