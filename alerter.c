@@ -15,8 +15,22 @@ int networkAlertStub(float celcius) {
 
 }
 
-void stubprintToConsole(){
+void stubPrintToConsole(){
  FailureCount++;
+}
+
+float CelsiusCounter =0;
+float NetworkCounter =0;
+float stubAlertInCelcius(float farenheit) {
+
+  CelsiusCounter++;
+ return 0;
+}
+
+int StubnetworkAlert(float celcius) {
+    NetworkCounter++;
+    return 0;
+
 }
 
  
@@ -45,10 +59,10 @@ void printToConsole(float celcius){
 }
 
 
-
-
 int main() {
-    alertCheck(alertInCelcius,303.6,stubprintToConsole, networkAlertStub);
+    alertCheck(alertInCelcius,303.6,printToConsole, networkAlertStub);
+ //test
+    //alertCheck(stubAlertInCelcius,303.6,stubPrintToConsole, StubnetworkAlert);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
