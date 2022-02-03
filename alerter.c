@@ -60,7 +60,7 @@ int main() {
     alertCheck(alertInCelcius,FARENHEITTEMP,printToConsole, networkAlertStub);
     alertCheck(alertInCelcius,FARENHEITTEMP2,printToConsole, networkAlertStub);
  //test
-    alertCheck(stubAlertInCelcius,,FARENHEITTEMP,stubPrintToConsole, StubnetworkAlert);
+    alertCheck(stubAlertInCelcius,FARENHEITTEMP,stubPrintToConsole, StubnetworkAlert);
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
